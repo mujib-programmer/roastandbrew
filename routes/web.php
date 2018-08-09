@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// This will set up the controller to return the app view along with the middleware to block off by only authenticated users.
+Route::get( '/', 'Web\AppController@getApp' )
+      ->middleware('auth');
